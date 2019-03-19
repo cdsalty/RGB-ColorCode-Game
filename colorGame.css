@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(21, 21, 21);
+}
+
+
+/* Our Header */
+h1 {
+    color: white;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+}
+/* Styling the R, G, and B */
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.blue {
+    color: blue;
+}
+
+
+/* We want our squares, inside of the container, to take up approx 30% EACH; each square, 30%  */
+.square {
+    width: 30%;                     /*this pertains to the actual width of EACH square */
+    background: white;            /*the color for the squares*/    /*  */
+    padding-bottom: 30%;            /*IMPORTANT: this displays our squares; could also use padding-top*/
+    float: left;                    /*This puts them all on the same line instead of in the same column leaving us with just a massive block/grid*/
+    margin: 1.66%;                  /*Seperates our squares, spaces them evenly and let's us see what we are working with;everything added up is 100%*/
+    /* I like styling... */
+    /* border-top-left-radius: 14%;
+    border-bottom-right-radius: 14%; */
+    border-top-right-radius: 19%;
+    border-bottom-left-radius: 19%;
+
+}
+
+#container{
+    margin: 0 auto; /*the trick to remember; zero margin on the top/bottom, auto margin the width to center it accordingly;*/
+    max-width: 650px; 
+    /* max-width: 34% */
+   
+    
+}
+
+
+
