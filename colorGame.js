@@ -26,6 +26,10 @@ let squares = document.querySelectorAll(".square");
 console.log(squares);
 let pickedColor = colors[3];
 let colorDisplay = document.getElementById("colorDisplay");
+
+// we create a variable called messageDisplay; it allows me to call on it later; will do when the user guesses wrong.
+let messageDisplay = document.querySelector("#message");
+
 colorDisplay.textContent = pickedColor;
 
 // add EventListeners 
@@ -40,9 +44,12 @@ for (var i = 0; i < squares.length; i++){
         var clickedColor=this.style.backgroundColor;
         // Then compare it to the pickedColor through an if statement
         if(clickedColor === pickedColor){
-        alert("correct!");
+        messageDisplay.textContent = "Correct. Excellent Job!";
         } else {
-            alert("wrong choice");
+            // if the user clicks one of the wrong ones, the color will fade into the background, thus disappearing. 
+            this.style.backgroundColor = "#151515";
+            // and the user will show a message in the <span> tag 
+            messageDisplay.textContent = "Don't give up! Try Again";
         }
     });
     // console.dir(squares[i]);

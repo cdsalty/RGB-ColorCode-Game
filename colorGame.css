@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(21, 21, 21);
+    background-color: #151515;
 }
 
 
@@ -10,6 +10,10 @@ h1 {
     padding-top: 4rem;
     padding-bottom: 4rem;
 
+}
+#message {
+    color: white;
+    font-size: 28px;
 }
 /* Styling the R, G, and B */
 .red {
