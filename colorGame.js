@@ -18,13 +18,14 @@ var colors = [
 ];
 
 /* 
-To Loop Through and assign a color to each square
+Loop Through and assign a color to each square
     - making use of working with the DOM
 */
 
 let squares = document.querySelectorAll(".square");
 console.log(squares);
-let pickedColor = colors[3];
+// let pickedColor = colors[3];
+let pickedColor = pickColor();  //pickColor() is the function that randomly assigns whatever the color will be
 let colorDisplay = document.getElementById("colorDisplay");
 
 // we create a variable called messageDisplay; it allows me to call on it later; will do when the user guesses wrong.
@@ -45,6 +46,7 @@ for (var i = 0; i < squares.length; i++){
         // Then compare it to the pickedColor through an if statement
         if(clickedColor === pickedColor){
         messageDisplay.textContent = "Correct. Excellent Job!";
+        changeColors(clickedColor);
         } else {
             // if the user clicks one of the wrong ones, the color will fade into the background, thus disappearing. 
             this.style.backgroundColor = "#151515";
@@ -54,4 +56,22 @@ for (var i = 0; i < squares.length; i++){
     });
     // console.dir(squares[i]);
     // console.log(colors[i]);
+}
+
+
+// Now, once the player selects the correct color, we need to loop through all squares and change each clor to match the given color
+function changeColors(color){
+//loop through squares:
+for(var i = 0; i < squares.length; i++){
+    //now change each color to match given color
+    squares[i].style.backgroundColor = color;
+    // AFTER creating this function, we then have to call on it above when the user clicks the Correct, pickedColor.
+    }
+}
+function pickColor(){
+    // first, randomly select a color from our array and assign it to a varaiable;
+    var random = Math.floor(Math.random() * colors.length);
+    // now, we return the number associated with the colors array that was returned.
+    return colors[random];
+    // return colorsArray[and give us this random number that identifies the color in the colorsArray]
 }
