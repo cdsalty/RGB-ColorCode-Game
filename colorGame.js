@@ -16,7 +16,10 @@ let squares = document.querySelectorAll(".square");
 let pickedColor = pickColor();  //pickColor() is the function that randomly assigns whatever the color will be
 let colorDisplay = document.getElementById("colorDisplay");
 let messageDisplay = document.querySelector("#message");// we create a variable called messageDisplay; it allows me to call on it later; will do when the user guesses wrong.
+let h1 = document.querySelector("h1"); //created to reference when the correct color is selcted, the background of the h1 will match
+
 colorDisplay.textContent = pickedColor;
+
 
 
 // ADD EVENT LISTENERS
@@ -29,6 +32,7 @@ for (var i = 0; i < squares.length; i++) {
         if (clickedColor === pickedColor) { // Compare the color clicked to the picked Color to guess
             messageDisplay.textContent = "Correct. Excellent Job!";
             changeColors(clickedColor);
+            h1.style.backgroundColor = pickedColor;
         } else {
             this.style.backgroundColor = "#151515"; // if the user clicks one of the wrong ones, the color will fade into the background, thus disappearing. 
             messageDisplay.textContent = "Don't give up! Try Again"; // and show the user a message in a <span> tag 

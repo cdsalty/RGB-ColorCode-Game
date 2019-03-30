@@ -5,14 +5,13 @@
 
 /* Our Header */
 h1 {
-    color: white;
     text-align: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
-
+    /* background-color: palevioletred; */
 }
 #message {
-    color: white;
+    color: yellowgreen;
     font-size: 28px;
 }
 /* Styling the R, G, and B */
