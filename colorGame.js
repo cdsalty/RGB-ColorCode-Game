@@ -10,19 +10,31 @@
 // ];
 
 // Now we define colors again, but now to randomly genenerate the number of colors to display
-var colors = generateRandomColors(6);   // we define colors and then we go and create the function(s)
+let colors = generateRandomColors(6);   // Create a variable, called  'colors' and assigns it an/the array of the random generated colors.
 let squares = document.querySelectorAll(".square");
 // console.log(squares);
-let pickedColor = pickColor();  //pickColor() is the function that randomly assigns whatever the color will be
+let pickedColor = pickColor();  //pickColor() is the function that randomly assigns whatever the color will be guessed
 let colorDisplay = document.getElementById("colorDisplay");
 let messageDisplay = document.querySelector("#message");// we create a variable called messageDisplay; it allows me to call on it later; will do when the user guesses wrong.
 let h1 = document.querySelector("h1"); //created to reference when the correct color is selcted, the background of the h1 will match
+let resetButton = document.querySelector(".reset"); //to call on and define what happens when user selects reset button
 
 colorDisplay.textContent = pickedColor;
 
+resetButton.addEventListener("click", function(){
+    // alert("sanity check");
+    //Generate all new colors in the squares
+    colors = generateRandomColors(6); // generates a random list of new colors in the boxes
+    pickedColor = pickColor();              // picks a new random color from the array to guess
+    colorDisplay.textContent = pickedColor;     // change our colorDisplay to match the picked Color
+    
+    // to change the colors of the squares, we just need to call on the loop we already created.
+    for (let i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = colors[i];
+    }
+})
 
 
-// ADD EVENT LISTENERS
 for (var i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = colors[i]; // adding the initial colors to squares
     squares[i].addEventListener("click", function () { // adding an EventListener, an click listener to the squares

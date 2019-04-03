@@ -12,19 +12,15 @@ h1 {
 }
 #message {
     color: yellowgreen;
-    font-size: 28px;
-}
-/* Styling the R, G, and B */
-.red {
-    color: red;
-}
-.green {
-    color: green;
-}
-.blue {
-    color: blue;
+    /* font-size: 28px; */
 }
 
+.bannerStripe {
+    background: white;
+    height: 30px;
+    text-align: center;
+    color: black; 
+}
 
 /* We want our squares, inside of the container, to take up approx 30% EACH; each square, 30%  */
 .square {
@@ -45,8 +41,6 @@ h1 {
     margin: 0 auto; /*the trick to remember; zero margin on the top/bottom, auto margin the width to center it accordingly;*/
     max-width: 650px; 
     /* max-width: 34% */
-   
-    
 }
 
 
