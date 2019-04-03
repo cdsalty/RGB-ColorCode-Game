@@ -24,17 +24,14 @@ colorDisplay.textContent = pickedColor;
 resetButton.addEventListener("click", function(){
     // alert("sanity check");
     //Generate all new colors in the squares
-    colors = generateRandomColors(6); // generates a random list of new colors in the boxes
-    pickedColor = pickColor();              // picks a new random color from the array to guess
+    colors = generateRandomColors(6);           // generates a random list of new colors in the boxes
+    pickedColor = pickColor();                  // picks a new random color from the array to guess
     colorDisplay.textContent = pickedColor;     // change our colorDisplay to match the picked Color
-    
-    // to change the colors of the squares, we just need to call on the loop we already created.
-    for (let i = 0; i < squares.length; i++){
+    for (let i = 0; i < squares.length; i++){   // to change the colors of the squares, we just need to call on the loop we already created.
         squares[i].style.backgroundColor = colors[i];
     }
-    
-})
-
+    h1.style.backgroundColor = "palevioletred";
+});
 
 for (var i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = colors[i]; // adding the initial colors to squares
@@ -44,6 +41,7 @@ for (var i = 0; i < squares.length; i++) {
         console.log(clickedColor, pickedColor);
         if (clickedColor === pickedColor) { // Compare the color clicked to the picked Color to guess
             messageDisplay.textContent = "Correct. Excellent Job!";
+            resetButton.textContent = "Play Again?";
             changeColors(clickedColor);
             h1.style.backgroundColor = pickedColor;
         } else {
