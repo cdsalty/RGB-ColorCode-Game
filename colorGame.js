@@ -32,6 +32,7 @@ resetButton.addEventListener("click", function(){
     for (let i = 0; i < squares.length; i++){
         squares[i].style.backgroundColor = colors[i];
     }
+    
 })
 
 
